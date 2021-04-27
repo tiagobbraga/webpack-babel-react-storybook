@@ -23,7 +23,21 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        use: ["style-loader", "css-loader"],
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: "postcss-loader",
+          },
+        ],
       },
       {
         test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
