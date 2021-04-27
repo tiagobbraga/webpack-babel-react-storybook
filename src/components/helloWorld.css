@@ -1,0 +1,5 @@
+$column: 200px;
+
+.container {
+  width: $column;
+}
